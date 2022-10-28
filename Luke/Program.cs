@@ -1,16 +1,17 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System.Configuration;
 using System.Text;
 using System.Xml.Linq;
 
 Console.WriteLine("Luke has entered the building");
 Console.WriteLine("type 'exit' to close application");
 
-string RabbitMQServer = "192.168.0.131";
+string RabbitMQServer = ConfigurationManager.AppSettings["RabbitMQServer"];
+string username = ConfigurationManager.AppSettings["username"];
+string password = ConfigurationManager.AppSettings["password"];
 string RabbitMQQueue = "theForce";
 string RabbitMQQueueRec = "theDarkForce";
-string username = "QueueUser";
-string password = "QueueUser";
 
 //look for response
 EventHandler<BasicDeliverEventArgs> consumerReceived = new EventHandler<BasicDeliverEventArgs>((model, e) => {

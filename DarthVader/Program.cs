@@ -1,16 +1,17 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System.Configuration;
 using System.Text;
 using System.Threading.Channels;
 
 Console.WriteLine("Darth Vader is up to no good");
 Console.WriteLine("Press any key to exit");
 
-string RabbitMQServer = "192.168.0.131";
+string RabbitMQServer = ConfigurationManager.AppSettings["RabbitMQServer"];
+string username = ConfigurationManager.AppSettings["username"];
+string password = ConfigurationManager.AppSettings["password"];
 string RabbitMQQueue = "theForce";
 string RabbitMQQueueRec = "theDarkForce";
-string username = "QueueUser";
-string password = "QueueUser";
 
 
 //look for response
