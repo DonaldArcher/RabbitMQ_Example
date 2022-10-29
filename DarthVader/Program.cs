@@ -37,7 +37,5 @@ var consumer = new EventingBasicConsumer(channel);
 consumer.Received += consumerReceived;
 channel.BasicConsume(queue: RabbitMQQueue, autoAck: true, consumer: consumer);
 
-//RabbitMQ.MessageQ.ReceiveMessage(RabbitMQServer, RabbitMQQueue, username, password, consumerReceived);
-
 Console.ReadKey();
 Console.WriteLine("Darth Vader melts into the darkness");

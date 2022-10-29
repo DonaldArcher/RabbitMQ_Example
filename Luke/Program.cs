@@ -32,9 +32,6 @@ var consumer = new EventingBasicConsumer(channel);
 consumer.Received += consumerReceived;
 channel.BasicConsume(queue: RabbitMQQueueRec, autoAck: true, consumer: consumer);
 
-//RabbitMQ.MessageQ.ReceiveMessage(RabbitMQServer, RabbitMQQueueRec, username, password, consumerReceived);
-
-
 //Loop and wait for name
 while (true)
 {
